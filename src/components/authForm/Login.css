@@ -1,0 +1,24 @@
+.login{
+    width: 200px;
+    display: grid;
+    justify-self: center;
+    margin: 0 auto;
+        
+}
+
+.login-input{
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    justify-content: center;
+}
+
+.login input{
+    padding: 5px 10px;
+    margin: 20px;
+}
+
+.login button{
+    padding: 10px;
+}
+
+
