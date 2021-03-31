@@ -1,29 +1,37 @@
-import { useState, useContext } from 'react';
+import React,{ useState, useContext , useReducer} from 'react';
 import UserReducer from "./userReducer"
 import axios from 'axios';
 import UserContext from './userContext';
 
-const userState = (props) =>{
+
+const UserState = (props) =>{
 
     const initialState = {
-        emailUser: "",
-        passwordUser: "",
-        tokenUser:"",
+        user: null,
+        tokenUser:null,
+        isAuthenticated: false
     }
 
 
     const [state, dispatch] = useReducer(UserReducer, initialState)
 
 
-    const login = async() =>{
+    const login = async(email, password) =>{
 
+        var user = {
+            emailUser: email,
+            passwordPassword: password
+        }
+        const response = await axios.post(`http://localhost:3001/auth/signin`, user)
+        console.log(response)
     }
 
 
     return (
         <UserContext.Provider value = {{
-            emailUser: state.emailUser,
-            passwordUser: state.passwordUser,
+            state,
+            dispatch,
+            user: state.user,
             tokenUser: state.tokenUser,
             login,
         }}>
@@ -32,4 +40,4 @@ const userState = (props) =>{
     )
 }
 
-export default userState;
+export default UserState;
