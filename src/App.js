@@ -4,6 +4,7 @@ import HeaderComponent from "./components/header/Header"
 import AuthForm from "./pages/authForm/authForm";
 import WelcomePage from "./components/welcome/Message"
 import Profile from "./components/userCard/UserCard"
+import Logout from "./components/authForm/Logout"
 
 
 import UserAuthState from "./context/userAuth/userAuthState"
@@ -14,8 +15,12 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-} from "react-router-dom"
+  Link,
+  Redirect,
+  useHistory,
+  useLocation
+} from "react-router-dom";
+
 //import UserState from "./context/user/userState"
 
 
@@ -34,6 +39,9 @@ const App = () =>{
           </Route>
           <Route path="/login">
             <AuthForm/>
+          </Route>
+          <Route path="/logout">
+            <Logout/>
           </Route>
           <Route path="/private">
             <Profile/>

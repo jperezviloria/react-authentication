@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState} from "react"
+import sw from "sweetalert2"
 import UserAuthContext from "../../context/userAuth/userAuthContext"
 import {
     BrowserRouter as Router,
@@ -9,11 +10,19 @@ import {
 
 const HeaderComponent = () =>{
 
+    
     const {isAuthenticated, LogoutUser} = useContext(UserAuthContext)
 
-    const onSubmitLogout = () =>{
-        LogoutUser()
+    const [authtenticated, setAuthtenticated] = useState(isAuthenticated)
+
+    const onSubmitLogout = async() =>{
+      sw.clickConfirm()
+        await LogoutUser
     }
+
+
+
+    
 
     return (
         <div>
@@ -24,7 +33,7 @@ const HeaderComponent = () =>{
             <li>
             {
               isAuthenticated
-              ? <Link to="/public" onSubmit = {onSubmitLogout()}>
+              ? <Link to="/logout" >
                 logout
                 </Link>
                 : <Link to="/login">

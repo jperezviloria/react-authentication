@@ -1,12 +1,13 @@
-import {GET_TOKEN, LOGIN, LOGOUT} from "../types"
+import {LOGIN, LOGOUT} from "../types"
 
 export default (state, action) => {
     const {payload, type} = action
 
     switch(type){
         case LOGIN:
-            localStorage.setItem("user", JSON.stringify(action, payload.user.emailUser));
-            localStorage.setItem("token", JSON.stringify(action, payload.token));
+            localStorage.setItem("user", payload.user.emailUser);
+            localStorage.setItem("token", payload.token);
+            localStorage.setItem("logued", true);
             return{
                 ...state,
                 user: payload.user.emailUser,
@@ -15,7 +16,7 @@ export default (state, action) => {
             }
         case LOGOUT:
             // why always clear localstorage?
-            //localStorage.clear()
+            localStorage.clear()
             return{
                 ...state,
                 user: null,

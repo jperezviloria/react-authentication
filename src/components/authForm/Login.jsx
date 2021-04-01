@@ -2,7 +2,17 @@ import React, { useEffect, useContext, useState} from "react"
 import {useForm} from "react-hook-form"
 import axios from "axios"
 import UserAuthContext from "../../context/userAuth/userAuthContext"
-
+import Swal from "sweetalert2"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect,
+    useHistory,
+    useLocation
+  } from "react-router-dom";
+  
 
 import "./Login.css"
 
@@ -12,11 +22,36 @@ const Login = () =>{
 
     const {register, handleSubmit} = useForm();
 
-    const onSubmitLogin = async(data) =>{
-        console.log(data)
 
-        const response = await axios.post(`http://localhost:3001/auth/signin`, data)
-        console.log(response.data)
+
+
+    const onSubmitLogin = async(data) =>{
+        
+        if(!data.emailUser){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Email is require',
+                footer: '<a href>Why do I have this issue?</a>'
+              })
+                
+              }
+         else if (!data.passwordUser){
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password is require',
+                footer: '<a href>Why do I have this issue?</a>'
+              })
+        }else if(data.emailUser && data.passwordUser){
+            LoginUser(data)
+        }
+        
+        
+
+       
+
     }
 
     const getAllUser = async() =>{
@@ -31,20 +66,22 @@ const Login = () =>{
     })
 
     return(
-        <form onSubmit={handleSubmit(LoginUser)} className="login">
+        <form onSubmit={handleSubmit(onSubmitLogin) } className="login">
             <div className="login-input">
             <input 
             type="text" 
             placeholder="email"
             name="emailUser"
+            
             ref={register()}/>
             <input 
             type="password" 
             placeholder="password"
             name="passwordUser"
+            
             ref={register()}/>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" >Login</button>
         </form>
     )
 
