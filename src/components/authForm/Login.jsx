@@ -8,7 +8,7 @@ import "./Login.css"
 
 const Login = () =>{
 
-    const {LoginUser, user} = useContext(UserAuthContext)
+    const {LoginUser, user, isAuthenticated} = useContext(UserAuthContext)
 
     const {register, handleSubmit} = useForm();
 
@@ -26,6 +26,7 @@ const Login = () =>{
 
     useEffect(() => {
         getAllUser()
+        console.log(isAuthenticated)
         
     })
 

@@ -1,0 +1,11 @@
+.profile-card img{
+    width: 300px;
+    height: 300px;
+    border-radius: 2000px;
+}
+
+.profile-card {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 32px;
+}
