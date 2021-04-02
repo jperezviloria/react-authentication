@@ -44,6 +44,9 @@ const HeaderComponent = () =>{
             <li>
               <Link to="/private">Private Page</Link>
             </li>
+            <li>
+              <Link to="/spinner">Sprinner</Link>
+            </li>
             
           </ul>
         </div>

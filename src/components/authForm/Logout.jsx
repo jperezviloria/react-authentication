@@ -4,6 +4,18 @@ import axios from "axios"
 import UserAuthContext from "../../context/userAuth/userAuthContext"
 import Swal from "sweetalert2"
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect,
+    useHistory,
+    useLocation
+  } from "react-router-dom";
+  
+
+
 import "./Login.css"
 
 const Logout = () =>{
@@ -45,7 +57,12 @@ const Logout = () =>{
 
     return(
         <form onSubmit={handleSubmit(onSubmitLogout)} className="login">
-            <button type="submit" >Logout</button>
+            {
+                isAuthenticated?
+                <button type="submit" >logout</button>
+                : <Redirect to={ {pathname:"/login"}}/>
+
+            }
         </form>
     )
 

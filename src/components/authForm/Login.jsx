@@ -66,7 +66,10 @@ const Login = () =>{
     })
 
     return(
-        <form onSubmit={handleSubmit(onSubmitLogin) } className="login">
+    
+        <div>{
+            !isAuthenticated ?
+            <form onSubmit={handleSubmit(onSubmitLogin) } className="login">
             <div className="login-input">
             <input 
             type="text" 
@@ -82,7 +85,10 @@ const Login = () =>{
             ref={register()}/>
             </div>
             <button type="submit" >Login</button>
-        </form>
+            </form>
+            :<Redirect to={ {pathname:"/private"}}/>
+        }
+        </div>
     )
 
 }
