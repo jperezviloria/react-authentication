@@ -6,19 +6,15 @@ import ParticularLevel from "./particularStudentLevel.jsx";
 
 const UserBoardPanel = () =>{
 
-    const [levelOne, setlevelOne] = useState([])
-    const [levelTwo, setlevelTwo] = useState([])
-    const [levelThree, setlevelThree] = useState([])
-
-
-
-
 
     return(
-        <div>
-            <ParticularLevel/>
-            <ParticularLevel/>
-            <ParticularLevel/>
+        <div className="userBoardPanel">
+            <ParticularLevel
+            level="1"/>
+            <ParticularLevel
+            level="2"/>
+            <ParticularLevel
+            level="3"/>
         </div>
     )
 }
