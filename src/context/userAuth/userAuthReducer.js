@@ -13,6 +13,7 @@ export default (state, action) => {
                 user: payload.user.emailUser,
                 token: payload.token,
                 isAuthenticated: true,
+                rol: payload.user.rol,
             }
         case LOGOUT:
             // why always clear localstorage?
@@ -22,6 +23,7 @@ export default (state, action) => {
                 user: null,
                 token: null,
                 isAuthenticated: false,
+                rol: null,
             }
         default:
             return state;

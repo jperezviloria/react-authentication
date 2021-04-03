@@ -18,7 +18,7 @@ import "./Login.css"
 
 const Login = () =>{
 
-    const {LoginUser, user, isAuthenticated} = useContext(UserAuthContext)
+    const {LoginUser, user, isAuthenticated, rol} = useContext(UserAuthContext)
 
     const {register, handleSubmit} = useForm();
 
@@ -49,9 +49,18 @@ const Login = () =>{
         }
         
         
-
+    
        
 
+    }
+
+    const decidedRedict = () =>{
+        switch(rol){
+            case "admin":
+                return "studentboard"
+            case "student":
+                return "private"
+        }
     }
 
     const getAllUser = async() =>{
@@ -86,7 +95,7 @@ const Login = () =>{
             </div>
             <button type="submit" >Login</button>
             </form>
-            :<Redirect to={ {pathname:"/private"}}/>
+            :<Redirect to={ {pathname:`/${decidedRedict()}`}}/>
         }
         </div>
     )

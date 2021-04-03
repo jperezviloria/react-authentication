@@ -1,0 +1,19 @@
+.getcertificate {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    
+}
+
+.getcertificate img{
+ margin: 0 auto
+    
+}
+
+.getcertificate button{
+    width: 300px;
+    padding: 20px 10px;
+    margin: 30px auto;
+    border: 10px solid orange;
+    border-radius: 30px;
+    font-size: 30px;
+}

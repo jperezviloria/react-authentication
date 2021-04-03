@@ -23,8 +23,8 @@ const PrivateAdminHeaderComponent = () =>{
     return (
         <div>
           <ul>
-            <li>
-              <Link to="/private">Users admin</Link>
+          <li>
+              <Link to="/studentboard">Student board</Link>
             </li>
             <li>
             {
@@ -38,8 +38,8 @@ const PrivateAdminHeaderComponent = () =>{
             }
             </li>
             <li>
-              <Link to="/studentboard">Student board</Link>
-            </li>            
+              <Link to="/usersadmin">Users admin</Link>
+            </li>         
           </ul>
         </div>
     )
