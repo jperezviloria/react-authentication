@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from "react"
-
+import "./App.css"
 
 import HeaderComponent from "./components/header/PublicHeader"
 import StudentHeader from "./components/header/PrivateStudentHeader"
@@ -11,6 +11,8 @@ import Profile from "./components/userCard/UserCard"
 import Logout from "./components/authForm/Logout"
 import Sprinner from "./components/welcome/Sprinner"
 import Prices from "./pages/prices/prices"
+import StudentBoard from "./pages/studentProgress/studentProgress"
+import GetCertificate from "./pages/getCertificate/getCertificate.jsx"
 
 
 import PrivateRoutes from "./services/PrivateRoutes"
@@ -46,7 +48,7 @@ const App = () =>{
   return (
     <Router>
       <UserAuthState>
-      <div>
+      <div className = "app-style">
         {/* <HeaderComponent/> */}
         {/* {isAuthenticated ? <PublicHeader/> : <PrivateHeader/>} */}
         {/* {true ? <HeaderComponent/> : <StudentHeader/>} */}
@@ -68,6 +70,12 @@ const App = () =>{
           </Route>
           <Route path="/prices">
             <Prices/>
+          </Route>
+          <Route path="/studentboard">
+            <StudentBoard/>
+          </Route>
+          <Route path="/getcertificate">
+            <GetCertificate/>
           </Route>
         </Switch>        
       </div>

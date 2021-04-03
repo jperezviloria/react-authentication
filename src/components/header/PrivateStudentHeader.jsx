@@ -42,7 +42,7 @@ const PrivateStudentHeaderComponent = () =>{
             }
             </li>
             <li>
-              <Link to="/dontMatch">Get certificate</Link>
+              <Link to="/getcertificate">Get certificate</Link>
             </li>            
           </ul>
         </div>

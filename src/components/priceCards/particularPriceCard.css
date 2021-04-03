@@ -1,0 +1,37 @@
+.particular-price-card{
+    justify-self: center;
+    border: 2px solid black;
+    width: 250px;
+    height: 450px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 30px;
+}
+
+.particular-price-card h3{
+    font-size: 40px;
+}
+
+.particular-price-card h1{
+    font-size: 60px;
+}
+
+.particular-price-card p{
+    font-size: 20px;
+}
+
+.particular-price-card a{
+    padding: 10px 60px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-decoration: none;
+    color: black;  
+}
+
+
+.particular-price-card a:hover{
+      background-color: coral;
+}
+
+
