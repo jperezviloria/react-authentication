@@ -1,12 +1,16 @@
-import React, {useContext} from "react"
+import React, {useContext, useEffect} from "react"
 
 
-import HeaderComponent from "./components/header/Header"
+import HeaderComponent from "./components/header/PublicHeader"
+import StudentHeader from "./components/header/PrivateStudentHeader"
+import HeaderFilter from "./components/header/HeaderFilter"
+
 import AuthForm from "./pages/authForm/authForm";
 import WelcomePage from "./components/welcome/Message"
 import Profile from "./components/userCard/UserCard"
 import Logout from "./components/authForm/Logout"
 import Sprinner from "./components/welcome/Sprinner"
+import Prices from "./pages/prices/prices"
 
 
 import PrivateRoutes from "./services/PrivateRoutes"
@@ -32,14 +36,21 @@ import {
 
 const App = () =>{
 
-  
+  //const {isAuthenticated} = useContext(UserAuthContext)
+
+  useEffect(() =>{
+    
+  })
+
 
   return (
     <Router>
       <UserAuthState>
       <div>
-        <HeaderComponent/>
+        {/* <HeaderComponent/> */}
         {/* {isAuthenticated ? <PublicHeader/> : <PrivateHeader/>} */}
+        {/* {true ? <HeaderComponent/> : <StudentHeader/>} */}
+        <HeaderFilter/>
         <Switch>
           {/* <PublicRoutes exact path= "/public" component = {WelcomePage}/> */}
           <Route path="/public">
@@ -55,8 +66,8 @@ const App = () =>{
           <Route path="/private">
             <Profile/>
           </Route>
-          <Route path="/spinner">
-            <Sprinner/>
+          <Route path="/prices">
+            <Prices/>
           </Route>
         </Switch>        
       </div>

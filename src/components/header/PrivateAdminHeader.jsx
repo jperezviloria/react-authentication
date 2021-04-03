@@ -8,7 +8,7 @@ import {
     Link
   } from "react-router-dom"
 
-const HeaderComponent = () =>{
+const PrivateAdminHeaderComponent = () =>{
 
     
     const {isAuthenticated, LogoutUser} = useContext(UserAuthContext)
@@ -20,15 +20,11 @@ const HeaderComponent = () =>{
         await LogoutUser
     }
 
-
-
-    
-
     return (
         <div>
           <ul>
             <li>
-              <Link to="/public">Public Page</Link>
+              <Link to="/private">Users admin</Link>
             </li>
             <li>
             {
@@ -42,15 +38,11 @@ const HeaderComponent = () =>{
             }
             </li>
             <li>
-              <Link to="/private">Private Page</Link>
-            </li>
-            <li>
-              <Link to="/spinner">Sprinner</Link>
-            </li>
-            
+              <Link to="/studentboard">Student board</Link>
+            </li>            
           </ul>
         </div>
     )
 }
 
-export default HeaderComponent;
+export default PrivateAdminHeaderComponent;

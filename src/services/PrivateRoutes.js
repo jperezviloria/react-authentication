@@ -2,7 +2,7 @@ import React, {Component, useContext} from "react"
 import {Route, Redirect} from "react-router-dom"
 import UserAuthContext from "../context/userAuth/userAuthContext"
 
-
+const emailUser = true;
 
 const PrivateRoutes = ({ component: Component, ...opt}) =>{
     const {} = useContext(UserAuthContext)
