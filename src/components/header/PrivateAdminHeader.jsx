@@ -38,7 +38,7 @@ const PrivateAdminHeaderComponent = () =>{
             }
             </li>
             <li>
-              <Link to="/usersadmin">Users admin</Link>
+              <Link to="/admincontroluser">Users admin</Link>
             </li>         
           </ul>
         </div>

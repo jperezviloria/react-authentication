@@ -13,6 +13,7 @@ import Sprinner from "./components/welcome/Sprinner"
 import Prices from "./pages/prices/prices"
 import StudentBoard from "./pages/studentProgress/studentProgress"
 import GetCertificate from "./pages/getCertificate/getCertificate.jsx"
+import AdminControlUser from "./pages/adminControlUsers/adminControlUsers"
 
 
 import PrivateRoutes from "./services/PrivateRoutes"
@@ -76,6 +77,9 @@ const App = () =>{
           </Route>
           <Route path="/getcertificate">
             <GetCertificate/>
+          </Route>
+          <Route path="/admincontroluser">
+          <AdminControlUser/>
           </Route>
         </Switch>        
       </div>
