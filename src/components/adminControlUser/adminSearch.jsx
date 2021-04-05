@@ -10,9 +10,15 @@ const AdminSearch = () =>{
     const {register, handleSubmit} = useForm();
 
     const onSubmitFilter = async(data) =>{
-        const request = await axios.get(`http://localhost:3001/publicuser`)
+
+        const studentFilter = {
+            emailUser: data.email,
+            levelUser: data.level,
+            rolUser: data.rol,
+        }
+        const request = await axios.post(`http://localhost:3001/publicuser/filter`, studentFilter)
         .then((response) =>{
-            console.log(response.data.data)
+            console.log(response.data)
             setUsers(response.data.data)
             setQuery(true)
         }).catch((error) =>{
