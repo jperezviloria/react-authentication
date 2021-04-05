@@ -2,6 +2,8 @@ import React from "react"
 import HttpClient from "../../services/axios"
 import { useForm } from "react-hook-form";
 import AdminSearch from "../../components/adminControlUser/adminSearch"
+import AdminGenerate from "../../components/adminControlUser/adminGenerate"
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -32,7 +34,7 @@ const AdminControlUsers = () =>{
                         <AdminSearch/>
                     </Route>
                     <Route path="/admincontroluser/generate">
-                        <h1>generate</h1>
+                        <AdminGenerate/>
                     </Route>
                     <Route path="/admincontroluser/inavailable">
                         <h1>inavailable</h1>
